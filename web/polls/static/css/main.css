@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "BMJUA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+    format("woff");
+  font-weight: normal;
+}
+@media (max-width: 414px) {
+  /* iPhone XR 크기 이하 */
+  .navbar-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .nav-item {
+    margin-top: 1rem;
+  }
+}
+/* main */
+header {
+  position: relative;
+}
+.mainP {
+  padding: 10%;
+  padding-top: 5%;
+}
+.main_title {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-size: 400%;
+  text-align: center;
+}
+.main_contain {
+  padding-top: 30%;
+  padding-left: 10px;
+  margin-bottom: 20%;
+}
+.main_button {
+  position: absolute; /* 요소를 절대 위치로 설정합니다 */
+  bottom: 20%; /* 하단에 위치시킵니다 */
+  left: 50%; /* 가운데 위치시킵니다 */
+  transform: translateX(-50%); /* 가운데 정렬합니다 */
+}
+.E {
+  color: rgb(255, 255, 255);
+}
+#main_analysis {
+  font-weight: bold;
+  color: white;
+}
+.login_button {
+  position: relative;
+  float: right;
+}
+
+.buttons {
+  margin: 10%;
+  text-align: center;
+}
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  font-family: "BMJUA";
+  border-radius: 50px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+
+.btn-hover.color-2 {
+  background-image: linear-gradient(
+    to right,
+    #f5ce62,
+    #e43603,
+    #fa7199,
+    #e85a19
+  );
+  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  font-family: "BMJUA";
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+body {
+  font-size: 14px;
+  font-family: "BMJUA", sans-serif;
+  text-align: center;
+}

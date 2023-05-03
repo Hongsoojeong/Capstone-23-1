@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "BMJUA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@media (max-width: 414px) {
+  /* iPhone XR 크기 이하 */
+  .navbar-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .nav-item {
+    margin-top: 1rem;
+  }
+}
+.parent {
+  /* position: absolute; */
+  /* width: 75%; */
+  /* top: 20%;
+  left: 20%;
+  right: 10%; */
+  padding: 10%;
+}
+
+.leftChild {
+  /* top: 50%; */
+  float: left;
+  /* width: 30%; */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.rightChild {
+  /* top: 50%; */
+  float: left;
+  margin-left: 10%;
+  /* width: 30%; */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "BMJUA";
+  text-align: center;
+}
+
+.flex_container {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-flow: row-reverse;
+}
+
+canvas {
+  border: 1px solid gray;
+  border-radius: 3px;
+}

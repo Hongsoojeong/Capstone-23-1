@@ -1,0 +1,224 @@
+@font-face {
+  font-family: "BMJUA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@media (max-width: 414px) {
+  /* iPhone XR 크기 이하 */
+  .navbar-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .nav-item {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .wrapper2 > input {
+    margin-top: 20px;
+    display: block;
+    clear: both;
+    width: 65%;
+  }
+  .wave {
+    width: 140%;
+    margin-left: -110px;
+  }
+  .audiowarpper > audio {
+    margin-left: 30px;
+    width: 75%;
+    /* margin: 0 auto; */
+  }
+}
+/* nav */
+.navbar-nav {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* column으로 수정 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  align-items: center; /* 수평 중앙 정렬 */
+  width: 100%;
+  text-align: center;
+}
+
+.navbar .nav-link {
+  color: rgb(23, 23, 23);
+  font-size: 20px;
+  margin-bottom: 10px; /* margin-bottom 추가 */
+}
+
+.navbar .nav-link:hover {
+  color: rgb(250, 182, 54);
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar .nav-link[aria-current="page"] {
+  color: rgb(250, 182, 54);
+  color: rgb(250, 182, 54);
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-toggler-icon {
+  color: rgb(23, 23, 23);
+}
+.navbar-brand {
+  margin-right: auto;
+}
+
+.navbar-toggler {
+  margin-left: auto;
+}
+/* nav 끝 */
+
+.analysis_title1 {
+  font-weight: bold;
+  color: rgb(250, 182, 54);
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 250%;
+  text-align: center;
+}
+#analysis_button {
+  font-weight: bold;
+  color: white;
+  position: absolute; /* 요소를 절대 위치로 설정합니다 */
+  bottom: 20%; /* 하단에 위치시킵니다 */
+  left: 50%; /* 가운데 위치시킵니다 */
+  transform: translateX(-50%); /* 가운데 정렬합니다 */
+}
+.analysis-container {
+  /* display: flex; */
+  /* flex-wrap: nowrap; */
+  position: relative;
+  align-items: center;
+  margin: 20%;
+}
+.graph-container {
+  margin: auto;
+}
+.graph-img {
+  width: 300px;
+  height: auto;
+}
+.record {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#anaylsis_pauseplay {
+  margin-top: 1rem;
+}
+
+.bi bi-list {
+  size: 50px;
+}
+header {
+  padding: 0;
+}
+.buttons {
+  margin: 10%;
+  text-align: center;
+}
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  font-family: "BMJUA";
+  border-radius: 50px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+
+.btn-hover.color-2 {
+  background-image: linear-gradient(
+    to right,
+    #f5ce62,
+    #e43603,
+    #fa7199,
+    #e85a19
+  );
+  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  font-family: "BMJUA";
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+body {
+  font-size: 14px;
+  font-family: "BMJUA", sans-serif;
+  text-align: center;
+}

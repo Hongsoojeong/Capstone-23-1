@@ -1,0 +1,273 @@
+@font-face {
+  font-family: "BMJUA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SBAggroB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (max-width: 414px) {
+  /* iPhone XR 크기 이하 */
+  .navbar-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .nav-item {
+    margin-top: 1rem;
+  }
+}
+
+/* nav */
+.navbar-nav {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* column으로 수정 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  align-items: center; /* 수평 중앙 정렬 */
+  width: 100%;
+  text-align: center;
+}
+
+.navbar .nav-link {
+  color: rgb(23, 23, 23);
+  font-size: 20px;
+  margin-bottom: 10px; /* margin-bottom 추가 */
+}
+
+.navbar .nav-link:hover {
+  color: rgb(250, 182, 54);
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar .nav-link[aria-current="page"] {
+  color: rgb(250, 182, 54);
+  color: rgb(250, 182, 54);
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-toggler-icon {
+  color: rgb(23, 23, 23);
+}
+.navbar-brand {
+  margin-right: auto;
+}
+
+.navbar-toggler {
+  margin-left: auto;
+}
+/* nav 끝 */
+
+.analysis_title1 {
+  font-weight: bold;
+  color: rgb(250, 182, 54);
+  font-size: 250%;
+  text-align: center;
+}
+#analysis_button {
+  font-weight: bold;
+  color: white;
+  position: absolute; /* 요소를 절대 위치로 설정합니다 */
+  bottom: 20%; /* 하단에 위치시킵니다 */
+  left: 50%; /* 가운데 위치시킵니다 */
+  transform: translateX(-50%); /* 가운데 정렬합니다 */
+}
+.analysis-container {
+  /* display: flex; */
+  /* flex-wrap: nowrap; */
+  position: relative;
+  align-items: center;
+  margin: 20%;
+}
+.graph-container {
+  margin: auto;
+}
+.graph-img {
+  width: 300px;
+  height: auto;
+}
+.record {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#anaylsis_pauseplay {
+  margin-top: 1rem;
+}
+
+.bi bi-list {
+  size: 50px;
+}
+header {
+  padding: 0;
+}
+.buttons {
+  margin: 10%;
+  text-align: center;
+}
+
+/*변경하기 버튼*/
+.btn2-hover {
+  width: 80px;
+  font-size: 10px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  height: 30px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  font-family: "BMJUA";
+  border-radius: 50px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.btn2-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn2-hover:focus {
+  outline: none;
+}
+
+.btn2-hover.color-2 {
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btn2-hover.color-3 {
+  background: #ffa751; /* fallback for old browsers */
+}
+
+/*내 정보 관련 css*/
+.divtitle {
+  font-family: "BMJUA";
+  font-size: 30px;
+  text-align: center;
+  font-style: bold;
+  margin-right: -20px;
+}
+
+.container_list {
+  text-align: center;
+}
+
+.container_item {
+  width: 90px;
+  height: 30px;
+  text-align: center;
+}
+
+.divcontent {
+  font-family: "BMJUA";
+  text-align: left;
+  border: 2px solid;
+  padding: 5px;
+  border-radius: 3px 3px 3px 3px;
+}
+
+/*박스 내용물 정렬*/
+.divalign {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; /*수평 정렬*/
+  align-items: left;
+  /*background-color: red;*/
+}
+
+.divitem {
+  width: 150px;
+  height: 60px;
+  /*background: #0054FF;*/
+  margin: 10px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  font-family: "BMJUA";
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+body {
+  font-size: 14px;
+  font-family: "BMJUA", sans-serif;
+}
+audio {
+  margin-top: 10px;
+  width: 300px;
+  height: 40px;
+}
+.voice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+span {
+  margin-left: 10px;
+}
+li {
+  margin-bottom: 10px;
+}
+.logs {
+  text-align: center;
+  margin: 20px;
+}

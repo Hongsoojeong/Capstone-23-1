@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "BMJUA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+    format("woff");
+  font-weight: normal;
+}
+@media (max-width: 414px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+  .main-nav {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  .main-nav li {
+    margin: 0 20px;
+  }
+
+  .chart-contents {
+    font-size: 1.5rem;
+    flex-direction: column;
+  }
+}
+
+.buttons {
+  margin: 10%;
+  text-align: center;
+}
+
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  font-family: "BMJUA";
+  border-radius: 50px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+
+.btn-hover.color-2 {
+  background-image: linear-gradient(
+    to right,
+    #f5ce62,
+    #e43603,
+    #fa7199,
+    #e85a19
+  );
+  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  font-family: "BMJUA";
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+body {
+  font-size: 14px;
+  font-family: "BMJUA", sans-serif;
+  text-align: center;
+}
+/* nav */
+.navbar-nav {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* column으로 수정 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  align-items: center; /* 수평 중앙 정렬 */
+  width: 100%;
+  text-align: center;
+}
+
+.navbar .nav-link {
+  color: rgb(23, 23, 23);
+  font-size: 20px;
+  margin-bottom: 10px; /* margin-bottom 추가 */
+}
+
+.navbar .nav-link:hover {
+  color: rgb(250, 182, 54);
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar .nav-link[aria-current="page"] {
+  color: rgb(250, 182, 54);
+  color: rgb(250, 182, 54);
+  background: #ffe259; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffa751,
+    #ffe259
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-toggler-icon {
+  color: rgb(23, 23, 23);
+}
+.navbar-brand {
+  margin-right: auto;
+}
+
+.navbar-toggler {
+  margin-left: auto;
+}
+/* nav 끝 */
+audio {
+  margin: 30px;
+  margin-bottom: 40px;
+  width: 250px;
+  height: 40px;
+}
+.voice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
