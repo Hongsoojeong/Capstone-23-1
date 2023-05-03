@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <link rel="stylesheet" href="../../static/css/login.css" async />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img
+              src="../../static/asset/logo.png"
+              alt="로고"
+              style="max-height: 100px"
+            />
+          </a>
+        </div>
+      </nav>
+    </header>
+    <div id="divPosition">
+      <div class="login-wrapper">
+        <h2>회원가입</h2>
+        <form method="post" action="서버의url" id="login-form">
+          <input type="text" name="userEmail" placeholder="Email" />
+          <input
+            type="password"
+            name="userPassword"
+            placeholder="패스워드"
+          /><br />
+          <input
+            type="password"
+            name="userPasswordCheck"
+            placeholder="패스워드 확인"
+          /><br />
+          <input type="text" name="userName" placeholder="이름" /><br />
+          <label for="male">남성</label>
+          <input
+            id="male"
+            type="radio"
+            value="남성"
+            name="ss"
+            style="width: 20px; height: 20px"
+          />
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <label for="female">여성</label>
+          <input
+            id="female"
+            type="radio"
+            checked
+            value="여성"
+            name="ss"
+            style="width: 20px; height: 20px"
+          />
+          <select name="job" style="width: 300px">
+            <option label="학생"></option>
+            <option label="대학생"></option>
+            <option label="직장인"></option>
+            <option label="전업주무"></option>
+            <option label="무직"></option></select
+          ><br /><br />
+          <input type="number" name="age" placeholder="나이" /><br />
+          <button
+            class="btn-hover color-2"
+            onClick="location.href='./login.html'; return false;"
+          >
+            회원가입
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
