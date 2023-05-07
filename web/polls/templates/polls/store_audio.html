@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %}
+<h1>녹음된 파일 목록</h1>
+<ul>
+  {% for voice in voices %}
+  <li>아이디: {{ voice.VoiceID }}, 날짜: {{ voice.RecordedDate }}</li>
+  {% empty %}
+  <li>녹음된 파일이 없습니다.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

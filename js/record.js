@@ -1,6 +1,7 @@
 // 엘리먼트 취득
 const $audioEl = document.querySelector("audio");
 const $btn = document.getElementById("record");
+const $uploadBtn = document.getElementById("upload");
 
 // 녹음중 상태 변수
 let isRecording = false;
@@ -18,34 +19,59 @@ $btn.onclick = async function (event) {
       audio: true,
     });
 
-    // MediaRecorder 생성
-    mediaRecorder = new MediaRecorder(mediaStream);
+    // MediaRecorder 생성 (mimeType 지정)
+    mediaRecorder = new MediaRecorder(mediaStream, {
+      mimeType: "audio/webm;codecs=opus",
+    });
 
     // 이벤트핸들러: 녹음 데이터 취득 처리
     mediaRecorder.ondataavailable = (event) => {
-      audioArray.push(event.data); // 오디오 데이터가 취득될 때마다 배열에 담아둔다.
+      if (event.data.size > 0) {
+        audioArray.push(event.data); // 오디오 데이터가 취득될 때마다 배열에 담아둔다.
+        $uploadBtn.disabled = false; // 녹음이 되어 데이터가 있을 경우, 파일 업로드 버튼 활성화
+      }
     };
 
-    // 이벤트핸들러: 녹음 종료 처리 & 재생하기
-    mediaRecorder.onstop = (event) => {
-      // 녹음이 종료되면, 배열에 담긴 오디오 데이터(Blob)들을 합친다: 코덱도 설정해준다.
-      const blob = new Blob(audioArray, { type: "audio/ogg codecs=opus" });
-      audioArray.splice(0); // 기존 오디오 데이터들은 모두 비워 초기화한다.
-
-      // Blob 데이터에 접근할 수 있는 주소를 생성한다.
-      const blobURL = window.URL.createObjectURL(blob);
-
-      // audio엘리먼트로 재생한다.
-      $audioEl.src = blobURL;
-      $audioEl.play();
-    };
-
-    // 녹음 시작
-    mediaRecorder.start();
+    // 녹음 시작 (timeslice 매개변수를 전달하여 일정 간격으로 녹음 데이터를 저장)
+    mediaRecorder.start(100);
     isRecording = true;
   } else {
     // 녹음 종료
     mediaRecorder.stop();
     isRecording = false;
+    $uploadBtn.disabled = true; // 녹음 종료 후 파일 업로드 버튼 비활성화
   }
+};
+
+// 파일 업로드 버튼 클릭 이벤트 핸들러
+$uploadBtn.onclick = async function (event) {
+  const blob = new Blob(audioArray, { type: "audio/webm;codecs=opus" });
+
+  // Blob 데이터에 접근할 수 있는 주소를 생성한다.
+  const blobURL = window.URL.createObjectURL(blob);
+
+  // 서버로 업로드
+  const formData = new FormData();
+  formData.append("audio", blob, "recorded_audio.webm");
+
+  try {
+    const response = await fetch("/recording", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      console.log("Audio file uploaded successfully!");
+    } else {
+      console.error("Error uploading audio file:", response.status);
+    }
+  } catch (error) {
+    console.error("Error uploading audio file:", error);
+  }
+
+  // MediaRecorder 초기화
+  mediaRecorder = null;
+  isRecording = false;
+  audioArray.length = 0;
+  $uploadBtn.disabled = true; // 파일 업로드 후 버튼 비활성화
 };

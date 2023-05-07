@@ -47,7 +47,7 @@
             id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="../recording">음성 녹음하기</a>
+              <a class="nav-link" href="../recording/">음성 녹음하기</a>
               </li>
               <!-- <li class="nav-item">
                       <a class="nav-link" href="./output.html"
@@ -59,7 +59,7 @@
                   class="nav-link"
                   active
                   aria-current="page"
-                  href="./mypage.html">마이페이지</a>
+                  href="./mypage.html/">마이페이지</a>
             </li>
               <li class="nav-item">
                 <a class="nav-link" id="logout">로그아웃</a>
@@ -106,7 +106,26 @@
       </div>
       <br><br>
 <!-- 내 정보 html 코드 끝-->
-<p style="font-family: 'SBAggroB';font-size: 25px; margin:10px"><span class = "linear_gradient">분석내역 </span>🗂️</p>
+
+<p class="logs" style="font-family: 'SBAggroB';font-size: 25px; margin:10px"><span class="linear_gradient">녹음 파일 목록</span>🗂️</p>
+{% if recordings %}
+  <ul class="logs">
+    {% for recording in recordings %}
+      <li>
+        <audio controls>
+          <source src="{{ recording.audio_file.url }}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="logs">녹음 파일이 없습니다.</p>
+{% endif %}
+
+
+
+<p class = "logs" style="font-family: 'SBAggroB';font-size: 25px; margin:10px"><span class = "linear_gradient">분석내역 </span>🗂️</p>
       <div class="logs" style="font-size: 20px">
         <li>
           <span class="day"> 2023/03/27 </span>

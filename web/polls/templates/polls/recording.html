@@ -58,7 +58,7 @@
                   >
                 </li> -->
                 <li class="nav-item">
-                  <a class="nav-link" href="../mypage">마이페이지</a>
+                  <a class="nav-link" href="../mypage/">마이페이지</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id = "logout"
@@ -83,46 +83,29 @@
                 class="btn-group"
                 id="anaylsis_pauseplay"
               >
-                <button id="record" type="button" class="btn btn-outline-secondary">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-play"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"
-                    />
-                  </svg>
-                </button>
-                <button id="stop" type="button" class="btn btn-outline-secondary">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-pause"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div class = "recording bar" style="margin: 70px;"><audio controls>녹음된 소리를 재생할 audio 엘리먼트</audio></div>
+
+
             </div>
+            <div style="margin-top: 20px;">
+              <button id="record">녹음 시작</button>
+              <button id="stop">녹음 정지</button>
+              <button id="upload">녹음 파일 전송</button>
+            </div>
+            <div style="margin-top: 20px;">
+              <audio id="audio" controls></audio>
+              </div>
           </div>
         </main>
       </div>
 
     </div>
 
+
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../static/js/navbar.js"></script>
     <script src="../../static/js/record.js"></script>
+    <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </body>
 </html>
