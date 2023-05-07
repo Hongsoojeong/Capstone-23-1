@@ -10,7 +10,8 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="../../static/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../static/css/recording.css" />
-    
+    <link rel="stylesheet" href="../../static/css/myPage.css" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
@@ -74,32 +75,18 @@
         <main class="analysis_main" style="margin-top: 30px;">
           <h2 class="analysis_title1">음성 감정 분석</h2>
           <div class="m-5 analysis-container">
-            <div class="record">
               <div style="margin-top: 40px;">
-              <img src="../../static/asset/sound.gif" height="200px"> 
+              <img src="../../static/asset/sound.gif" height="180px"> 
               <br>
-            </div>
-              <div
-                class="btn-group"
-                id="anaylsis_pauseplay"
-              >
-
-
-            </div>
-            <div style="margin-top: 20px;">
-              <button id="record">녹음 시작</button>
-              <button id="stop">녹음 정지</button>
-              <button id="upload">녹음 파일 전송</button>
-            </div>
-            <div style="margin-top: 20px;">
-              <audio id="audio" controls></audio>
-              </div>
           </div>
         </main>
       </div>
-
+    <div>
+      <button class="btn2-hover color-3" id="record" style="font-size: 12px;">녹음 시작</button>
+      <button class="btn2-hover color-3" id="stop" style="font-size: 12px;">녹음 정지</button>
+      <button class="btn2-hover color-3" type="submit" id="upload" style="font-size: 12px;">녹음 파일 전송</button><br>
     </div>
-
+    <audio id="audio" controls></audio>
 
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

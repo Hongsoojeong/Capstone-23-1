@@ -3,13 +3,11 @@ from django.db import models
 # Create your models here.
 # 음성 녹음 데이터를 저장할 모델을 정의
 
-
 # 이 모델은 audio_file 필드와 uploaded_at 필드로 구성되어 있다.
 # audio_file 필드는 FileField로, 파일을 저장할 경로를 upload_to 매개변수로 설정한다.
 # uploaded_at 필드는 DateTimeField로, 오디오 파일이 업로드된 시간을 저장한다.
+
+
 class VoiceRecording(models.Model):
     audio_file = models.FileField(upload_to="audio/")
     uploaded_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"Voice Recording {self.pk}"

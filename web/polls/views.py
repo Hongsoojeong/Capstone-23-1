@@ -1,9 +1,14 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.template import loader
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
+from django.http import JsonResponse
+from .models import VoiceRecording
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
 from django.conf import settings
 import os
-from .models import VoiceRecording
-from django.template import loader
+from datetime import datetime  # datetime 모듈 추가
 
 
 # Create your views here.
@@ -27,40 +32,38 @@ def signUp(request):
     return render(request, "polls/signUP.html")
 
 
-def mypage(request):  # 여기가 문제인것 같음
-    record = request.POST.get("audio_file")
-    # recordings = VoiceRecording.objects.all()
-    context = {"recordings": record}
-    return render(request, "polls/mypage.html", context)
+def mypage(request):
+    if request.method == "POST":
+        recording = VoiceRecording(audio_file=request.FILES["audio_file"])
+        recording.save()
+        return JsonResponse(
+            {
+                "id": recording.id,
+                "uploaded_at": recording.uploaded_at.strftime("%Y-%m-%d %H:%M:%S"),
+            }
+        )
+    else:
+        recordings = VoiceRecording.objects.all()
+        context = {"recordings": recordings}
+        return render(request, "polls/mypage.html", context)
 
 
 def recording(request):
-    if request.method == "POST" and request.FILES.get("audio"):
-        return handle_audio_upload(request)
+    if request.method == "POST":
+        audio_file = request.FILES.get("audio_file")
+        if audio_file:
+            # 파일이 올바르게 첨부된 경우
+            # 파일을 읽어들이고 데이터베이스에 저장
+            file_name = default_storage.save(
+                audio_file.name, ContentFile(audio_file.read())
+            )
+            recording = VoiceRecording(audio_file=file_name)
+            recording.save()
+            return JsonResponse(
+                {
+                    "id": recording.id,
+                    "uploaded_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                }
+            )
 
-    return display_recordings(request)
-
-
-def handle_audio_upload(request):
-    if request.method == "POST" and request.FILES.get("audio"):
-        audio_file = request.FILES["audio"]
-        recording = VoiceRecording(audio_file=audio_file)
-
-        # 파일 저장 경로와 파일명 설정
-        file_path = os.path.join(settings.MEDIA_ROOT, "recordings", audio_file.name)
-
-        with open(file_path, "wb") as f:
-            f.write(audio_file.read())
-            recording.audio_file.name = os.path.relpath(f.name, settings.MEDIA_ROOT)
-
-        recording.save()
-
-        return HttpResponse("ok")
-
-    return HttpResponseBadRequest("Invalid Request: 'audio' file not found")
-
-
-def display_recordings(request):
-    recordings = VoiceRecording.objects.all()
-    context = {"recordings": recordings}
-    return render(request, "polls/recording.html", context)
+    return render(request, "polls/recording.html")

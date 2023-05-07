@@ -107,6 +107,7 @@
       <br><br>
 <!-- 내 정보 html 코드 끝-->
 
+<div stlye="text-align=center">
 <p class="logs" style="font-family: 'SBAggroB';font-size: 25px; margin:10px"><span class="linear_gradient">녹음 파일 목록</span>🗂️</p>
 {% if recordings %}
   <ul class="logs">
@@ -116,13 +117,14 @@
           <source src="{{ recording.audio_file.url }}" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
+        <p>업로드 날짜: {{ recording.uploaded_at|date:"Y-m-d H:i:s" }}</p>
+
       </li>
     {% endfor %}
   </ul>
 {% else %}
   <p class="logs">녹음 파일이 없습니다.</p>
 {% endif %}
-
 
 
 <p class = "logs" style="font-family: 'SBAggroB';font-size: 25px; margin:10px"><span class = "linear_gradient">분석내역 </span>🗂️</p>
