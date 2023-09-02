@@ -1,0 +1,19 @@
+<!-- your-view.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your View</title>
+</head>
+<body>
+    <h1>Emotions Ratio:</h1>
+    <ul>
+        {% for emotion, ratio in emotions_ratio.items %}
+        <li>{{ emotion }}: {{ ratio }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h1>Max Emotion:</h1>
+    <p>{{ max_emotion }}</p>
+</body>
+</html>

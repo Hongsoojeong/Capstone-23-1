@@ -191,6 +191,14 @@ header {
   background: #ffa751; /* fallback for old browsers */
 }
 
+.btn2-hover.color-4 {
+  background: #ffa751; /* fallback for old browsers */
+}
+
+.btn2-hover.color-4 :hover .static {
+  display: none
+}
+
 /*내 정보 관련 css*/
 .divtitle {
   font-family: "BMJUA";
